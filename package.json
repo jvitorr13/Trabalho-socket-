@@ -1,0 +1,17 @@
+{
+  "name": "trabalho_moretto2",
+  "version": "1.0.0",
+  "main": "cliente.js",
+  "scripts": {
+    "start": "node cliente.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-webcam": "^0.8.2",
+    "ws": "^8.18.0"
+  }
+}

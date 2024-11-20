@@ -1,0 +1,6 @@
+1: install pip install opencv-python
+- npm init -y
+- npm install ws
+- pip install pyautogui
+- npm install node-webcam
+- pip install ctypes
