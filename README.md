@@ -1,4 +1,4 @@
-Trabalho de Sistemas Operacionais - Projeto de Comunicação por Socket
+h1<Trabalho de Sistemas Operacionais - Projeto de Comunicação por Socket/>
 Este projeto foi desenvolvido durante as aulas de Sistemas Operacionais e implementa um sistema de comunicação por sockets que permite a interação entre múltiplos clientes e um servidor. O objetivo é explorar conceitos de redes, concorrência e interações cliente-servidor.
 
 Funcionalidades Implementadas
