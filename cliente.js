@@ -3,15 +3,14 @@ const readline = require('readline');
 const { exec } = require('child_process');
 const NodeWebcam = require('node-webcam');
 
-// Configuração para entrada de dados via terminal
+// entrada de dados via terminal
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Solicita o nome do usuário
+
 rl.question('Digite seu nome: ', (nome) => {
-    // Conecta ao servidor
     const client = new net.Socket();
     client.connect(5000, '127.0.0.1', () => {
         console.log(`Conectado ao servidor como ${nome}`);
@@ -24,14 +23,12 @@ rl.question('Digite seu nome: ', (nome) => {
         console.log(`Servidor: ${data.toString()}`);
     });
 
-    // Trata desconexão
     client.on('close', () => {
         console.log('Desconectado do servidor.');
         process.exit(0);
     });
 });
 
-// Exibe o menu de opções
 function exibirMenu(client) {
     console.log("\nSelecione uma opção:");
     console.log("1 - Enviar mensagens (modo contínuo)");
@@ -47,7 +44,6 @@ function exibirMenu(client) {
     });
 }
 
-// Processa a opção selecionada pelo usuário
 function processarOpcao(opcao, client) {
     switch (opcao) {
         case '1':
@@ -86,7 +82,6 @@ function processarOpcao(opcao, client) {
     }
 }
 
-// Função para enviar mensagens de texto
 function iniciarEnvioDeMensagens(client) {
     console.log("Digite suas mensagens (ou 'sair' para voltar ao menu):");
     rl.on('line', (input) => {
@@ -99,7 +94,6 @@ function iniciarEnvioDeMensagens(client) {
     });
 }
 
-// Função para executar scripts Python
 function executarScript(scriptName, successMessage) {
     exec(`python ${scriptName}`, (error, stdout, stderr) => {
         if (error) {
@@ -114,7 +108,6 @@ function executarScript(scriptName, successMessage) {
     });
 }
 
-// Função para instalar e executar um aplicativo remoto
 function instalarERodarAplicativo(appName, callback) {
     exec(`python gerenciar_app.py ${appName}`, (error, stdout, stderr) => {
         if (error) {
@@ -130,7 +123,6 @@ function instalarERodarAplicativo(appName, callback) {
     });
 }
 
-// Função para abrir a webcam
 function openWebcam(callback) {
     console.log('Abrindo a webcam...');
     NodeWebcam.capture("webcam_image", {}, (err, data) => {
