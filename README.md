@@ -13,7 +13,7 @@
 ### 1. Servidor Multicliente
 <ul>
     <li>Permite que múltiplos clientes se conectem simultaneamente.</li>
-    <li>Gerencia conexões utilizando threads para garantir eficiência e paralelismo.</li>
+    <li>Gerencia conexões utilizando threads para a eficiência </li>
 </ul>
 
 ### 2. Envio de Mensagens
